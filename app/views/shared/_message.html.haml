@@ -1,0 +1,7 @@
+.message
+  .message__name
+    = message.user.name
+  .message__content
+    = message.content
+  .message__image
+    = image_tag message.image.url, class: "image" if message.image.present?
