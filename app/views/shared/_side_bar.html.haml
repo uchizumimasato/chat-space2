@@ -14,5 +14,5 @@
       .group
         .group__name
           = link_to "#{group.name}", group_messages_path(group)
-        .group__message
+        %span.group__message
           = group.show_last_message 

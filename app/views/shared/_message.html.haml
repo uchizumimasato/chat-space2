@@ -1,6 +1,8 @@
 .message
-  .message__name
+  %span.message__name
     = message.user.name
+  %span.message__time
+    = message.created_at.strftime("%-m月%-d日%-H時%-M分")
   .message__content
     = message.content
   .message__image
