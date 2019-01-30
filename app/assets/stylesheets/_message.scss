@@ -1,39 +1,41 @@
 .messagesbox {
   height: 100vh;
 
-  .messagesbox__header {
-    height: 12%;
+  &__header {
+    height: 12vh;
     border-bottom: 1px solid #eee;
 
-    .messagesbox__header__title {
+    &__title {
       margin: 30px 0 20px 30px; 
     }
 
-    .messagesbox__header__members {
+    &__members {
       margin-left: 30px; 
     }
 
-    .messagesbox__header__button {
+    &__button {
      float: right;
       margin: -80px 40px 0 0;
     }
   }
 
-  .messagesbox__body {
+  &__body {
     height: 73%;
+    overflow: scroll; 
 
     .message {
       margin: 10px 0 0 20px;
 
-      .message__image .image {
+      &__image .image {
         height: 100px;
         width: 100px;	
       }
     }
   }
 
-  .messagesbox__footer {
+  &__footer {
     height: 11%;
     background-color: #B8C3C7; 
   }
 }
+
