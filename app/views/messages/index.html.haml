@@ -18,5 +18,5 @@
         = form_for [@group, @message] do |f|
           = f.hidden_field :user_id, value: current_user.id
           = f.text_field :content 
-          = f.submit "ボタン"
-          = f.file_field :image 
+          = f.submit "ボタン", class: "button"
+          = f.file_field :image, class: "image"
