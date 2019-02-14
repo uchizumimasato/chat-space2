@@ -31,8 +31,7 @@ $(document).on('turbolinks:load', function() {
         contentType: false
       })
       .done(function(data) {
-	console.log(1111)
-        var html = buildMessage(data);
+	var html = buildMessage(data);
         $('.messagesbox__body').append(html);
 	$('#message_content').val('');
 	$('.image').val('');

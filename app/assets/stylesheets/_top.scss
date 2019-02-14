@@ -9,6 +9,15 @@
     .header {
       height: 130px;
       background-color: #090c10; 
+
+      .header__name {
+        color: gray;
+      }
+    }
+
+    .groups {
+      height: calc(100vh - 130px);
+      overflow: scroll;
     }
   }
 
