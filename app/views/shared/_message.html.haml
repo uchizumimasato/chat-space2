@@ -1,9 +1,10 @@
-.message
+.message{"data-message-id" => "#{message.id}"}
   %span.message__name
     = message.user.name
   %span.message__time
-    = message.created_at.strftime("%-m月%-d日%-H時%-M分")
+    = message.created_at.strftime("%-m/%-d %-H:%-M")
   .message__content
     = message.content
   .message__image
     = image_tag message.image.url, class: "image" if message.image.present?
+

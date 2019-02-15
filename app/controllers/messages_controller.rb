@@ -1,9 +1,13 @@
 class MessagesController < ApplicationController
   before_action :set_group, only: [:index, :create]
 
-  def index 
+  def index
     @messages = @group.messages.includes(:user)
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json { @last_messages = Message.where('id > ?', params[:id]) }
+    end
   end
 
   def create
@@ -11,12 +15,12 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
         format.json
-      end      
+      end
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
-      render :index 
-    end 
+      render :index
+    end
   end
 
   private
