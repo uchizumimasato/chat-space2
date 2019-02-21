@@ -32,7 +32,6 @@ $(document).on('turbolinks:load', function() {
         contentType: false
       })
       .done(function(data) {
-        debugger
         var html = buildMessage(data);
         $('.messagesbox__body').append(html);
         //$('#message_content').val('');
