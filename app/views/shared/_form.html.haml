@@ -11,6 +11,9 @@
       = f.label :name, class: 'chat-group-form__label'
     .chat-group-form__field--right
       = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
+      = f.collection_check_boxes :user_ids, User.all, :id, :name, include_hidden: false do |b|
+        = b.check_box(class: 'bbbb')
+        = b.label(class: 'abcd')
   / ユーザー名の検索入力欄
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
@@ -27,7 +30,7 @@
     .chat-group-form__field--right
       .chat-group-users
         %div{class: 'chat-group-user clearfix', id: current_user.id}
-          %input#group_user_ids{name: 'group[user_ids][]', type: 'hidden', value: current_user.id} 
+          %input#group_user_ids{name: 'group[user_ids][]', type: 'hidden', value: current_user.id}
           %p= current_user.name
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
